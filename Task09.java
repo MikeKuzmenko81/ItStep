@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Task09 {
     public static void main(String[] args) {
-        //double a = 3.14;
         System.out.println("Введите число для проверки, в качестве десятичного разделител использовать запятую(,) :");
         Scanner scan = new Scanner(System.in);
         double number = scan.nextDouble();
