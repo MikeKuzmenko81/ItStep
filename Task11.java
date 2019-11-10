@@ -1,9 +1,14 @@
 package ru.mike;
 
+import java.util.Scanner;
+
 public class Task11 {
     public static void main(String[] args) {
         //int secondsLast = 134056;
-        int secondsLast = 4611660;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Напишите сколько секундо осталось до Нового Года");
+
+        int secondsLast = scan.nextInt();
         int minuts = secondsLast / 60;
         int hours = minuts / 60;
         int days = hours / 24;
@@ -19,7 +24,12 @@ public class Task11 {
         minuts = secondsLast / secInMinut;
         int seconds = secondsLast % secInMinut;
 
-        System.out.println(days + " " + hours + " " + minuts + " " + seconds);
+        String strDays = " ";
+        String strHours = " ";
+        String strMinuts = " ";
+        String strSeconds = " ";
 
+        System.out.println("До Нового Года осталось :");
+        System.out.println( strDays + days + strHours + hours + strMinuts + minuts + strSeconds + seconds);
     }
 }
