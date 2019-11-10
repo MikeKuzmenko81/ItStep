@@ -9,27 +9,44 @@ public class Task11 {
         System.out.println("Напишите сколько секундо осталось до Нового Года");
 
         int secondsLast = scan.nextInt();
-        int minuts = secondsLast / 60;
-        int hours = minuts / 60;
-        int days = hours / 24;
-        System.out.println(minuts + " " + hours + " " + days);
 
         final int secInDay = 60 * 60 * 24;
         final int secInHour = 60 * 60;
         final int secInMinut = 60;
-        days = secondsLast / secInDay;
+        int days = secondsLast / secInDay;
         secondsLast = secondsLast % secInDay;
-        hours = secondsLast / secInHour;
+        int hours = secondsLast / secInHour;
         secondsLast = secondsLast % secInHour;
-        minuts = secondsLast / secInMinut;
+        int minuts = secondsLast / secInMinut;
         int seconds = secondsLast % secInMinut;
 
-        String strDays = " ";
-        String strHours = " ";
-        String strMinuts = " ";
-        String strSeconds = " ";
+        String[] arrDays = {" дней ", " день ", " дня "};
+        String strDays = arrDays[forSklonenie(days)];
+
+        String[] arrHours = {" часов ", " час ", " часа "};
+        String strHours = arrHours[forSklonenie(hours)];
+
+        String[] arrMinuts = {" минут ", " минута ", " минуты "};
+        String strMinuts = arrMinuts[forSklonenie(minuts)];
+
+        String[] arrSeconds = {" секунд ", " секунда ", " секунды "};
+        String strSeconds = arrSeconds[forSklonenie(seconds)];
 
         System.out.println("До Нового Года осталось :");
-        System.out.println( strDays + days + strHours + hours + strMinuts + minuts + strSeconds + seconds);
+        System.out.println(days + strDays + hours + strHours + minuts + strMinuts + seconds + strSeconds);
+    }
+
+    public static int forSklonenie(int time){
+        int result = 0;
+        int num = time % 100;
+        int ed = num % 10;
+        if((num >= 5 && num <= 20) || (ed >=5 && ed <=9) || (ed == 0)){
+            result = 0;
+        }else if(ed == 1){
+            result = 1;
+        }else if((ed >= 2) && (ed <= 4)){
+            result = 2;
+        }
+        return result;
     }
 }
