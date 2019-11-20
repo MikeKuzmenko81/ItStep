@@ -1,4 +1,4 @@
-package com.company;
+package ru.mike;
 
 import java.util.Scanner;
 
