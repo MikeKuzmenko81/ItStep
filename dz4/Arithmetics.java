@@ -1,4 +1,4 @@
-package ru.mike;
+package ru.mike.dz4;
 
 import java.util.Scanner;
 
