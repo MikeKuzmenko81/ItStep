@@ -1,8 +1,8 @@
-package ru.mike.praktik;
+package ru.mike.dz4;
 
 import java.util.Scanner;
 
-public class Task01_dz4 {
+public class AveregeSum {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите три числа");
