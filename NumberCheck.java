@@ -1,5 +1,6 @@
-package com.company;
+package ru.mike;
 
+import javax.swing.plaf.IconUIResource;
 import java.util.Scanner;
 
 public class NumberCheck {
@@ -12,6 +13,7 @@ public class NumberCheck {
             if(!num.equals("q")) {
                 CheckSign(Integer.parseInt(num));
                 CheckOstatok(Integer.parseInt(num));
+                checkSimple(Integer.parseInt(num));
             }
         }
     }
@@ -23,15 +25,31 @@ public class NumberCheck {
         }
     }
     public static void CheckOstatok(int num){
-//        if((num % 2) == 0){ System.out.println("Число делится без остатка на 2"); }
-//        if((num % 5) == 0){ System.out.println("Число делится без остатка на 5"); }
-//        if((num % 3) == 0){ System.out.println("Число делится без остатка на 3"); }
-//        if((num % 6) == 0){ System.out.println("Число делится без остатка на 6"); }
-//        if((num % 9) == 0){ System.out.println("Число делится без остатка на 9"); }
         if(((num % 2) == 0) && ((num % 5) == 0) && ((num % 3) == 0) && ((num % 6) == 0) && ((num % 9) == 0)){
             System.out.println("Число делится без остатка на числа 2, 3, 5, 6, 9");
         }else {
             System.out.println("Число НЕ делится без остатка на числа 2, 3, 5, 6, 9");
+        }
+    }
+    public static void checkSimple(int num){
+        int predel = 0;
+        if(num % 2 != 0){
+            predel = (num / 2) + 1;
+        }else {
+            predel = (num / 2);
+        }
+        int count = 2;
+        boolean isSimpl = true;
+        while (count <= predel){
+            if(num % count == 0){
+                isSimpl = false;
+            }
+            count++;
+        }
+        if(isSimpl){
+            System.out.println("Число " + num + " простое");
+        }else {
+            System.out.println("Число " + num + " составное");
         }
     }
 }
