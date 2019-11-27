@@ -17,6 +17,10 @@ public class ReversedArray {
         System.out.println(Arrays.toString(arr));
         System.out.println("Перевернутый массив");
         System.out.println(Arrays.toString(myReverse(arr)));
+
+        System.out.println("Часть начального массива");
+        System.out.println(Arrays.toString(subArray(arr, 3, 5)));
+
     }
     static int[] myReverse(int[] array){
         int temp = 0;
@@ -26,5 +30,17 @@ public class ReversedArray {
             array[array.length - 1 - i] = temp;
         }
         return array;
+    }
+    static int[] subArray(int[] array, int index, int count){
+        int[] resultArr = new int[count];
+        for (int i = index, c = 0; c < count; i++, c++){
+            if(i < array.length) {
+                resultArr[c] = array[i];
+            }else {
+                resultArr[c] = 1;
+            }
+        }
+
+        return resultArr;
     }
 }
