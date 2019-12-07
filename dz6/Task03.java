@@ -13,7 +13,7 @@ public class Task03 {
             slag = num / 100;
             num = num % 100;
             return slag + sumNumbers(num);
-        }if((num < 100) && (num >= 10)){
+        }else if((num < 100) && (num >= 10)){
             slag = num / 10;
             num = num % 10;
             return slag + sumNumbers(num);
