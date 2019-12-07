@@ -11,14 +11,14 @@ public class Task05 {
             num = number / 100;
             number = number % 100;
             orderNumbersDesk(number);
-            System.out.println(num);
+            System.out.print(" " + num);
         }else if((number < 100) && (number >= 10)){
             num = number / 10;
             number = number % 10;
             orderNumbersDesk(number);
-            System.out.println(num);
+            System.out.print(" " + num);
         }else {
-            System.out.println(number);
+            System.out.print(number);
         }
     }
 }
