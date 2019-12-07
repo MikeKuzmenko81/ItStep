@@ -10,15 +10,15 @@ public class Task04 {
         if((number < 1000) && (number >= 100)){
             num = number / 100;
             number = number % 100;
-            System.out.println(num);
+            System.out.print(num + " ");
             orderNumbersAsc (number);
         }else if((number < 100) && (number >= 10)){
             num = number / 10;
             number = number % 10;
-            System.out.println(num);
+            System.out.print(num + " ");
             orderNumbersAsc (number);
         }else {
-            System.out.println(number);
+            System.out.print(number);
         }
     }
 }
