@@ -23,14 +23,13 @@ public class Task06 {
 
     public static int reversNum (int num, int great, int less, int mnogetel){
         int slag = 0;
-        int result = 0;
         int l = less/10;
-        if(l > 1){
+        int m = mnogetel * 10;
+        if(less > 1){
             slag = num / less;
             num = num % less;
             great /= 10;
-            mnogetel *= 10;
-            return (slag * mnogetel) + reversNum(num, great, l, mnogetel);
+            return (slag * mnogetel) + reversNum(num, great, l, m);
         }else {
             return num * mnogetel;
         }
