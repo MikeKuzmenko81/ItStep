@@ -1,7 +1,4 @@
 package ru.mike.dz7;
-
-import javax.crypto.spec.PSource;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Task01 {
@@ -86,7 +83,8 @@ public class Task01 {
                 }
             }
         }else {
-            System.out.println("Нельзя перемножать матрицы с размерами : " + mnog1[0].length + "X" + mnog1.length + " и " + mnog2.length + "X" + mnog2[0].length);
+            System.out.println("Нельзя перемножать матрицы с размерами : "
+                    + mnog1[0].length + "X" + mnog1.length + " и " + mnog2.length + "X" + mnog2[0].length);
             return result;
         }
         return result;
