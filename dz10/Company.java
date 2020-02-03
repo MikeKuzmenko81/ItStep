@@ -2,6 +2,7 @@ package ru.mike.dz10;
 
 import java.util.Iterator;
 
+//Класс контейнер с итератором для списка объектов
 public class Company implements Iterable<Employee> {
     private Employee[] employees = new Employee[0];
     public void setEmployees(Employee[] employees){
@@ -10,6 +11,6 @@ public class Company implements Iterable<Employee> {
 
     @Override
     public Iterator<Employee> iterator() {
-        return null;
+        return new ArrayIterator<Employee>(employees);
     }
 }
