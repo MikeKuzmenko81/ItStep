@@ -20,6 +20,8 @@ public class MyDict<TKey,TValue> {
 
     //добавление
     public void add(TKey keyItem, TValue valItem){
+        int curIndex = pointeToEnd;
+
         //проверка что такого ключа еще нет в arKey
         int index = findIndexByKey(keyItem);
         boolean isKey = false;
@@ -39,12 +41,14 @@ public class MyDict<TKey,TValue> {
             System.arraycopy(arVal, 0 , tmpVal, 0, arVal.length - 1);
             arKey = tmpKey;
             arVal = tmpVal;
-            arKey[pointeToEnd++] = keyItem;
-            arVal[pointeToEnd++] = valItem;
+            arKey[curIndex] = keyItem;
+            arVal[curIndex] = valItem;
         }else {
-            arKey[pointeToEnd++] = keyItem;
-            arVal[pointeToEnd++] = valItem;
+            arKey[curIndex] = keyItem;
+            arVal[curIndex] = valItem;
         }
+
+        pointeToEnd++;
     }
 
     //получить значение по ключу
