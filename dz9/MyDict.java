@@ -1,5 +1,7 @@
 package ru.mike.dz9;
 
+import java.util.Iterator;
+
 public class MyDict<TKey,TValue> {
     private int pointeToEnd; //укзатель на последний заполненный элемент
     private Object[] arKey;
@@ -65,8 +67,10 @@ public class MyDict<TKey,TValue> {
     private int findIndexByKey(TKey keyItem){
         int result = -1;
         for(int i = 0; i < arKey.length; i++){
-            if (arKey[i].equals(keyItem)){
-                result = i;
+            if(arKey[i] != null) {
+                if (arKey[i].equals((TKey) keyItem)) {
+                    result = i;
+                }
             }
         }
         return result;
