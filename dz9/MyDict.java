@@ -19,13 +19,10 @@ public class MyDict<TKey,TValue> {
     //добавление
     public void add(TKey keyItem, TValue valItem){
         //проверка что такого ключа еще нет в arKey
+        int index = findIndexByKey(keyItem);
         boolean isKey = false;
-        int index = 0;
-        for(int i = 0; i < arKey.length; i++){
-            if (arKey[i].equals(keyItem)){
-                isKey = true; //нашли в текущем словаре такой же ключ
-                index = i; //запомнили его позицию для доступа arVal
-            }
+        if(index >= 0){
+            isKey = true; //нашли в текущем словаре такой же ключ
         }
 
         //записываем значение по переданому ключу
@@ -47,11 +44,31 @@ public class MyDict<TKey,TValue> {
             arVal[pointeToEnd++] = valItem;
         }
     }
-    //инднксатор
-    //получение значение по индексу
+
+    //получить значение по ключу
+    public TValue get(TKey keyItem){
+        TValue result = null;
+
+        int index = findIndexByKey(keyItem);
+        if(index >= 0){
+            result = (TValue) arVal[index];
+        }
+
+        return result;
+    }
 
     //получить количество пар
     public int size(){
         return pointeToEnd;
+    }
+
+    private int findIndexByKey(TKey keyItem){
+        int result = -1;
+        for(int i = 0; i < arKey.length; i++){
+            if (arKey[i].equals(keyItem)){
+                result = i;
+            }
+        }
+        return result;
     }
 }
